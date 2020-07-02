@@ -5,15 +5,24 @@ import Index from './pages/Index'
 import {
     BrowserRouter as Router,
     Route,
-    Redirect
+    Redirect,
+    Switch
 } from 'react-router-dom'
+import PrivateRoute from './component/PrivateRouter'
 function App() {
   return (
       <Router>
         <div className="App">
+            <Switch>
             <Route path="/" exact render={()=><Redirect to="/login"/>} />
             <Route path="/login" component={Login}/>
-            <Route path="/index" component={Index}/>
+            {/*<Route path="/index" component={Index}/>*/}
+            <Route path="/index" render={()=>
+                <Index>
+                    <PrivateRoute/>
+                </Index>
+            }/>
+            </Switch>
         </div>
       </Router>
   );

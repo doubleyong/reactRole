@@ -1,8 +1,12 @@
 import React from 'react'
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+// import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import LeftMenu from '../component/LeftMenu'
-const { SubMenu } = Menu;
+// import PrivateRouter from '../component/PrivateRouter'
+import loadable from '@loadable/component'
+import {Route} from 'react-router-dom'
+// import UserManger from './../component/user/UserManger'
+// const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 // import {
 //     BrowserRouter as Router,
@@ -41,7 +45,10 @@ class Index extends React.Component
                                 minHeight: 280,
                             }}
                         >
+                            {/*<Route key="1" path="/index/user" component={ loadable(() => import(`./../component/user/UserManger`))}/>*/}
                             {/*显示Route*/}
+                            {this.props.children}
+                            {/*<PrivateRouter/>*/}
                         </Content>
                     </Layout>
                 </Layout>

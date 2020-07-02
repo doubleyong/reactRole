@@ -23,10 +23,10 @@ class Login extends React.Component {
             },
         };
         const onFinish = values => {
-            console.log('Success:', values);
+
             //需要将值 ，提到服务器端进行判断
             this.props.user.login().then((data)=>{
-                console.log(data)
+
                 this.props.history.push("/index")
             }).catch(function(err){
                 console.log(err)
@@ -38,7 +38,7 @@ class Login extends React.Component {
         return (
             <Layout>
                 <Header>国信安w218班级系统</Header>
-                <Content>
+              <Content>
                     <Form
                         {...layout}
                         name="basic"
