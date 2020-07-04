@@ -3,8 +3,8 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 // import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import LeftMenu from '../component/LeftMenu'
 // import PrivateRouter from '../component/PrivateRouter'
-import loadable from '@loadable/component'
-import {Route} from 'react-router-dom'
+// import loadable from '@loadable/component'
+// import {Route} from 'react-router-dom'
 // import UserManger from './../component/user/UserManger'
 // const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;

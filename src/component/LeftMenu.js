@@ -1,7 +1,7 @@
 import React from 'react'
 import {inject,observer} from 'mobx-react'
 import {  Menu } from 'antd';
-import { NotificationOutlined } from '@ant-design/icons';
+import * as antIcons from '@ant-design/icons';
 import {Link} from 'react-router-dom'
 const { SubMenu } = Menu;
 
@@ -19,12 +19,15 @@ React.Component
      bindMenu(menulist){
 
     let MenuList= menulist.map((item,index)=>{
-
         if(item.menuChilds.length===0){  //没有子菜单
-            return <Menu.Item key={item.menuId}><Link to={item.menuUrl}>{item.menuName}</Link></Menu.Item>
+            let IconMenu =antIcons[item.menuImgClass];
+            return <Menu.Item key={item.menuId} icon={  <IconMenu />}>
+                <Link to={item.menuUrl}>{item.menuName}</Link>
+            </Menu.Item>
         }
         else{
-            return <SubMenu key={item.menuId} icon={<NotificationOutlined />} title={item.menuName}>
+            let IconMenu =antIcons[item.menuImgClass];
+            return <SubMenu key={item.menuId} icon={  <IconMenu />} title={item.menuName}>
                 {this.bindMenu(item.menuChilds)}
             </SubMenu>
         }

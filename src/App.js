@@ -6,13 +6,15 @@ import {
     BrowserRouter as Router,
     Route,
     Redirect,
-    Switch
+    Switch,
+    HashRouter
 } from 'react-router-dom'
 import PrivateRoute from './component/PrivateRouter'
 function App() {
   return (
       <Router>
         <div className="App">
+            <HashRouter>
             <Switch>
             <Route path="/" exact render={()=><Redirect to="/login"/>} />
             <Route path="/login" component={Login}/>
@@ -23,6 +25,7 @@ function App() {
                 </Index>
             }/>
             </Switch>
+            </HashRouter>
         </div>
       </Router>
   );
